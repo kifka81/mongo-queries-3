@@ -21,3 +21,4 @@ db.post.aggregate([{$unwind:"$comments"}, {$group:{"_id":{"nombre":{"nombre":"$c
 https://codeday.me/es/qa/20190504/640419.html
 
 db.restaurantes.find().skip(25).limit(25)
+
