@@ -16,3 +16,8 @@ db.post.aggregate([{$unwind:"$comments"}, {$group:{"_id":{"nombre":{"nombre":"$c
 
 db.post.aggregate([{$unwind:"$comments"}, {$group:{"_id":{"nombre":{"nombre":"$comments":$comments.by.name"},"comments":{$sum:1}}}, {$sort:{"comments":-1},{$group:{_id:null,name_max:{$first:"$comments"},name_min:{$last:"$_id"}{"num_min":{$last:"$comments"}}}])
 
+**
+# ejercicio pagiación
+https://codeday.me/es/qa/20190504/640419.html
+
+db.restaurantes.find().skip(25).limit(25)
